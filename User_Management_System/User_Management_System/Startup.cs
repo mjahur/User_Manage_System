@@ -26,7 +26,7 @@ namespace User_Management_System
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<UMSContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UMSContext")));
+            services.AddDbContext<UMSContext>(options => options.UseSqlServer("Server = 127.0.0.1, 1433; Database = UMSdb; User Id = sa; password = psswrd1995!?+; MultipleActiveResultSets = true"));
 
         }
 

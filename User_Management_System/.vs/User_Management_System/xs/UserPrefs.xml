@@ -1,27 +1,29 @@
 ﻿<Properties StartupConfiguration="{E89B1B11-BF97-49B0-B253-A0C84C257DF2}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="User_Management_System/Controllers/UsersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="User_Management_System/Views/Users/Create.cshtml">
     <Files>
-      <File FileName="User_Management_System/Program.cs" Line="1" Column="1" />
+      <File FileName="User_Management_System/Program.cs" Line="16" Column="1" />
       <File FileName="User_Management_System/Startup.cs" Line="29" Column="1" />
       <File FileName="User_Management_System/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="User_Management_System/appsettings.json" Line="12" Column="16" />
+      <File FileName="User_Management_System/appsettings.json" Line="15" Column="1" />
       <File FileName="User_Management_System/Models/User.cs" Line="18" Column="2" />
       <File FileName="User_Management_System/Database/UMSContext.cs" Line="11" Column="1" />
       <File FileName="User_Management_System/Controllers/UsersController.cs" Line="50" Column="1" />
+      <File FileName="User_Management_System/Views/_ViewStart.cshtml" Line="2" Column="1" />
+      <File FileName="User_Management_System/Views/Users/Create.cshtml" Line="4" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="User_Management_System" expanded="True">
             <Node name="User_Management_System" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UsersController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Database" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Users" expanded="True" />
+                <Node name="Users" expanded="True">
+                  <Node name="Create.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
