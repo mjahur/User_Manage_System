@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using User_Management_System.Database;
 using User_Management_System.Models;
+using User_Management_System.Security;
 
 namespace User_Management_System.Controllers
 {
@@ -23,6 +24,28 @@ namespace User_Management_System.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+
+        //POST: Users/Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login([Bind(include: "ID, Email, HashPassword, FirstName, LastName, DOB, ProfilePicture, Salt")]Users users)
+        {
+            if (ModelState.IsValid)
+            {
+                Users u = _context.Users.SingleOrDefault(u => u.Email == users.Email);
+
+                if (u == null || PasswordHash.GenerateHash(u.Salt, users.Password) != u.HashPassword)
+                {
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return View("Login");
         }
 
         // GET: Users
