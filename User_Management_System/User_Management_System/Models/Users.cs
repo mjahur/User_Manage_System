@@ -11,7 +11,6 @@ namespace User_Management_System.Models
         public string Email { get; set; }
 
         [NotMapped]
-        [Required]
         [DisplayName("Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }

@@ -27,14 +27,12 @@
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
-    <None Remove="Security\" />
     <None Remove="BCrypt.Net-Core" />
     <None Remove="BCrypt.Net-Next" />
     <None Remove="Content\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
-    <Folder Include="Security\" />
-    <Folder Include="Content\" />
+    <Folder Include="Library\" />
   </ItemGroup>
 </Project>

@@ -29,23 +29,19 @@ namespace User_Management_System.Controllers
         //POST: Users/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login([Bind(include: "ID, Email, HashPassword, FirstName, LastName, DOB, ProfilePicture, Salt")]Users users)
+        public ActionResult Login([Bind(include: "ID, Email, HashPassword, FirstName, LastName, DOB, ProfilePicture, Salt, Password")]Users users)
         {
             if (ModelState.IsValid)
             {
                 Users u = _context.Users.SingleOrDefault(u => u.Email == users.Email);
 
-                if (u == null || PasswordHash.GenerateHash(u.Salt, users.Password) != u.HashPassword)
+                if (u == null || BCrypt.Net.BCrypt.HashPassword(u.Salt, users.Password) != u.HashPassword)
                 {
                     return RedirectToAction("Login");
                 }
-                else
-                {
-                    return RedirectToAction("Index");
-                }
             }
 
-            return View("Login");
+            return View("Index");
         }
 
         // GET: Users
@@ -87,8 +83,8 @@ namespace User_Management_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                users.Salt = PasswordSalt.GenerateSalt(3);
-                users.HashPassword = PasswordHash.GenerateHash(users.Salt, users.Password);
+                users.Salt = BCrypt.Net.BCrypt.GenerateSalt();
+                users.HashPassword = BCrypt.Net.BCrypt.HashPassword(users.Password, users.Salt);
                 _context.Add(users);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
