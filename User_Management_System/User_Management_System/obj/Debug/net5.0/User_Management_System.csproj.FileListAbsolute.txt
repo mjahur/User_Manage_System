@@ -172,3 +172,4 @@
 /Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/Razor/Views/Users/Details.cshtml.g.cs
 /Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/Razor/Views/Users/Edit.cshtml.g.cs
 /Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/Razor/Views/Users/Index.cshtml.g.cs
+/Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/Razor/Views/Users/Login.cshtml.g.cs

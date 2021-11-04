@@ -19,6 +19,12 @@ namespace User_Management_System.Controllers
             _context = context;
         }
 
+        //GET: Users/Login
+        public IActionResult Login()
+        {
+            return View();
+        }
+
         // GET: Users
         public async Task<IActionResult> Index()
         {
