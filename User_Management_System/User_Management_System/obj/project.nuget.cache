@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WOJkTAFsH83cwk5WpjGbY9gIV4hArFSAdCuwaYD2lrjGkFDXtUmDW0aeytSyqLXv43G5LyRPx/DZBWxheO1nfA==",
+  "dgSpecHash": "W0CEnL0m3WX0Sm+UdZpVP1eC5PQAZtaTmIOiCAWsodyVff0ZNo5QSmFva2XaKUttviWP/8chsJSGwyKRO5jMVg==",
   "success": true,
   "projectFilePath": "/Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/User_Management_System.csproj",
   "expectedPackageFiles": [
+    "/Users/umaryaqub/.nuget/packages/bcrypt.net-core/1.6.0/bcrypt.net-core.1.6.0.nupkg.sha512",
     "/Users/umaryaqub/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/umaryaqub/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "/Users/umaryaqub/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

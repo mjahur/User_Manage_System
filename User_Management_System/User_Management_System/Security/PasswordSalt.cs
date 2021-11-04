@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace User_Management_System.Security
 {
-    public class PasswordSalt
+    public static class PasswordSalt
     {
         public static string GenerateSalt(int length)
         {
