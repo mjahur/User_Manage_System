@@ -1,23 +1,25 @@
 ﻿<Properties StartupConfiguration="{E89B1B11-BF97-49B0-B253-A0C84C257DF2}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="User_Management_System/Controllers/UsersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="User_Management_System/Views/Users/Details.cshtml">
     <Files>
-      <File FileName="User_Management_System/Views/Users/Login.cshtml" Line="10" Column="1" />
-      <File FileName="User_Management_System/Views/Users/Index.cshtml" Line="46" Column="47" />
-      <File FileName="User_Management_System/Views/Users/Edit.cshtml" Line="2" Column="1" />
       <File FileName="User_Management_System/Views/Shared/_Layout.cshtml" Line="29" Column="19" />
-      <File FileName="User_Management_System/Controllers/UsersController.cs" Line="83" Column="10" />
+      <File FileName="User_Management_System/Controllers/UsersController.cs" Line="45" Column="18" />
       <File FileName="User_Management_System/Views/Users/Create.cshtml" Line="44" Column="19" />
-      <File FileName="User_Management_System/Models/Users.cs" Line="13" Column="20" />
-      <File FileName="User_Management_System/Program.cs" Line="16" Column="1" />
-      <File FileName="User_Management_System/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="User_Management_System/Views/Users/Index.cshtml" Line="34" Column="1" />
+      <File FileName="User_Management_System/Views/Users/Delete.cshtml" Line="43" Column="14" />
+      <File FileName="User_Management_System/Views/Users/Details.cshtml" Line="39" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="User_Management_System" expanded="True">
             <Node name="User_Management_System" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UsersController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Users" expanded="True">
+                  <Node name="Details.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -34,9 +36,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.User__Management__System PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/Controllers/UsersController.cs" relfile="User_Management_System/Controllers/UsersController.cs" line="38" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

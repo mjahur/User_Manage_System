@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using User_Management_System.Database;
 using User_Management_System.Models;
-using User_Management_System.Security;
 
 namespace User_Management_System.Controllers
 {
@@ -35,13 +34,18 @@ namespace User_Management_System.Controllers
             {
                 Users u = _context.Users.SingleOrDefault(u => u.Email == users.Email);
 
-                if (u == null || BCrypt.Net.BCrypt.HashPassword(u.Salt, users.Password) != u.HashPassword)
+                if (u == null || BCrypt.Net.BCrypt.Verify(users.Password+users.Salt, u.HashPassword))
                 {
                     return RedirectToAction("Login");
                 }
+                else
+                {
+                    string uID = u.ID.ToString();
+                    return View("Details",u);
+                }
             }
 
-            return View("Index");
+            return View(users);
         }
 
         // GET: Users
