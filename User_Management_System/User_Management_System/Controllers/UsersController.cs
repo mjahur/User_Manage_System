@@ -28,20 +28,19 @@ namespace User_Management_System.Controllers
         //POST: Users/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login([Bind(include: "ID, Email, HashPassword, FirstName, LastName, DOB, ProfilePicture, Salt, Password")]Users users)
+        public ActionResult Login([Bind(include: "Email, Password")]Users users)
         {
             if (ModelState.IsValid)
             {
                 Users u = _context.Users.SingleOrDefault(u => u.Email == users.Email);
-
-                if (u == null || BCrypt.Net.BCrypt.Verify(users.Password+users.Salt, u.HashPassword))
+                if (u == null || !BCrypt.Net.BCrypt.Verify(users.Password + u.Salt.ToString(),u.HashPassword))
                 {
                     return RedirectToAction("Login");
                 }
                 else
                 {
                     string uID = u.ID.ToString();
-                    return View("Details",u);
+                    return RedirectToAction("Details",u);
                 }
             }
 
