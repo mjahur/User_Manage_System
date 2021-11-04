@@ -1,21 +1,24 @@
 ﻿<Properties StartupConfiguration="{E89B1B11-BF97-49B0-B253-A0C84C257DF2}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="User_Management_System/Views/Users/Login.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="User_Management_System/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="User_Management_System/Views/Users/Login.cshtml" Line="2" Column="3" />
+      <File FileName="User_Management_System/Views/Users/Login.cshtml" Line="10" Column="1" />
+      <File FileName="User_Management_System/Views/Users/Index.cshtml" Line="46" Column="47" />
+      <File FileName="User_Management_System/Views/Users/Edit.cshtml" Line="2" Column="1" />
+      <File FileName="User_Management_System/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="User_Management_System" expanded="True">
             <Node name="User_Management_System" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Database" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Security" expanded="True" />
+              <Node name="Content" expanded="True">
+                <Node name="bootstrap" expanded="True">
+                  <Node name="css" expanded="True" />
+                </Node>
+              </Node>
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Users" expanded="True">
-                  <Node name="Login.cshtml" selected="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>

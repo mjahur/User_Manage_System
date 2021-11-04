@@ -30,9 +30,11 @@
     <None Remove="Security\" />
     <None Remove="BCrypt.Net-Core" />
     <None Remove="BCrypt.Net-Next" />
+    <None Remove="Content\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
     <Folder Include="Security\" />
+    <Folder Include="Content\" />
   </ItemGroup>
 </Project>
