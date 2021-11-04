@@ -83,10 +83,12 @@ namespace User_Management_System.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Email,HashPassword,FirstName,LastName,DOB,ProfilePicture,Salt")] Users users)
+        public async Task<IActionResult> Create([Bind("ID,Email,HashPassword,FirstName,LastName,DOB,ProfilePicture,Salt,Password")] Users users)
         {
             if (ModelState.IsValid)
             {
+                users.Salt = PasswordSalt.GenerateSalt(3);
+                users.HashPassword = PasswordHash.GenerateHash(users.Salt, users.Password);
                 _context.Add(users);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
