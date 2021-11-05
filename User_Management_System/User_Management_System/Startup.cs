@@ -25,6 +25,13 @@ namespace User_Management_System
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(5);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
             services.AddControllersWithViews();
             services.AddDbContext<UMSContext>(options => options.UseSqlServer("Server = 127.0.0.1, 1433; Database = UMSdb; User Id = sa; password = psswrd1995!?+; MultipleActiveResultSets = true"));
 
@@ -49,6 +56,8 @@ namespace User_Management_System
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
