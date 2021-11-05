@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using User_Management_System.Database;
 using User_Management_System.Models;
+using Microsoft.AspNetCore.Session;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace User_Management_System.Controllers
 {
@@ -39,6 +42,8 @@ namespace User_Management_System.Controllers
                 }
                 else
                 {
+                    //Set the value into a session key
+                    HttpContext.Session.SetString("UsersSession", JsonConvert.SerializeObject(u));
                     string uID = u.ID.ToString();
                     return RedirectToAction("Details",u);
                 }
@@ -46,6 +51,8 @@ namespace User_Management_System.Controllers
 
             return View(users);
         }
+
+        //Get: Users/H
 
         // GET: Users
         public async Task<IActionResult> Index()
