@@ -45,14 +45,20 @@ namespace User_Management_System.Controllers
                     //Set the value into a session key
                     HttpContext.Session.SetString("UsersSession", JsonConvert.SerializeObject(u));
                     string uID = u.ID.ToString();
-                    return RedirectToAction("Details",u);
+                    return RedirectToAction("Homepage");
                 }
             }
 
             return View(users);
         }
 
-        //Get: Users/H
+        //Get: Users/Homepage
+        public IActionResult Homepage()
+        {
+            var user = JsonConvert.DeserializeObject<Users>(HttpContext.Session.GetString("UsersSession"));
+            ViewBag.UsersName = user.FirstName;
+            return View();
+        }
 
         // GET: Users
         public async Task<IActionResult> Index()

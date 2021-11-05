@@ -174,3 +174,4 @@
 /Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/User_Management_System.pdb
 /Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/User_Management_System.genruntimeconfig.cache
 /Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/User_Management_System.csproj.AssemblyReference.cache
+/Users/umaryaqub/Documents/Projects/User_Management_System/User_Manage_System/User_Management_System/User_Management_System/obj/Debug/net5.0/Razor/Views/Users/Homepage.cshtml.g.cs
