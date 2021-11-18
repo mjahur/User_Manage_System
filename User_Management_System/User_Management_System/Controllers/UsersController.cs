@@ -55,7 +55,7 @@ namespace User_Management_System.Controllers
         //GET: Users/Login
         public IActionResult Logout() {
             HttpContext.Session.Remove("UsersSession");
-            return View("Login");
+            return RedirectToAction("Login");
         }
 
         //Get: Users/Homepage
