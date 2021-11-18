@@ -32,9 +32,11 @@
     <None Remove="BCrypt.Net-Next" />
     <None Remove="Content\" />
     <None Remove="Microsoft.AspNetCore.Session" />
+    <None Remove="Library\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
     <Folder Include="Library\" />
+    <Folder Include="Library\Images\" />
   </ItemGroup>
 </Project>

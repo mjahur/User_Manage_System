@@ -52,6 +52,12 @@ namespace User_Management_System.Controllers
             return View(users);
         }
 
+        //GET: Users/Login
+        public IActionResult Logout() {
+            HttpContext.Session.Remove("UsersSession");
+            return View("Login");
+        }
+
         //Get: Users/Homepage
         public IActionResult Homepage()
         {
