@@ -16,11 +16,18 @@ namespace User_Management_System.Models
         public string Password { get; set; }
 
         public string HashPassword { get; set; }
+
+        [DisplayName("First name")]
         public string FirstName { get; set; }
+
+        [DisplayName("Last name")]
         public string LastName { get; set; }
 
+        [DisplayName("Date of birth")]
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
+
+        [DisplayName("Profile picture")]
         public string ProfilePicture { get; set; }
         public string Salt { get; set;  }
     }
