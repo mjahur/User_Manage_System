@@ -36,7 +36,8 @@ namespace User_Management_System.Controllers
             if (ModelState.IsValid)
             {
                 Users u = _context.Users.SingleOrDefault(u => u.Email == users.Email);
-                if (u == null || !BCrypt.Net.BCrypt.Verify(users.Password + u.Salt.ToString(),u.HashPassword))
+                string inputHash = BCrypt.Net.BCrypt.HashPassword(users.Password, u.Salt);
+                if (u == null || inputHash != u.HashPassword)
                 {
                     return RedirectToAction("Login");
                 }
@@ -73,7 +74,7 @@ namespace User_Management_System.Controllers
         }
 
         // GET: Users/Details
-        public async Task<IActionResult> Details()
+        public IActionResult Details()
         {
             var user = JsonConvert.DeserializeObject<Users>(HttpContext.Session.GetString("UsersSession"));
 
@@ -110,19 +111,14 @@ namespace User_Management_System.Controllers
         }
 
         // GET: Users/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit()
         {
-            if (id == null)
+            var user = JsonConvert.DeserializeObject<Users>(HttpContext.Session.GetString("UsersSession"));
+            if (user == null)
             {
                 return NotFound();
             }
-
-            var users = await _context.Users.FindAsync(id);
-            if (users == null)
-            {
-                return NotFound();
-            }
-            return View(users);
+            return View(user);
         }
 
         // POST: Users/Edit/5
@@ -130,9 +126,12 @@ namespace User_Management_System.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Email,HashPassword,FirstName,LastName,DOB,ProfilePicture,Salt")] Users users)
+        public async Task<IActionResult> Edit(int id, [Bind("Email,FirstName,LastName,DOB,ProfilePicture,Password")] Users users)
         {
-            if (id != users.ID)
+            //get user from db using id of logged in user via session
+            var user = _context.Users.SingleOrDefault(u => u.ID == JsonConvert.DeserializeObject<Users>(HttpContext.Session.GetString("UsersSession")).ID);
+
+            if (user == null)
             {
                 return NotFound();
             }
@@ -141,7 +140,15 @@ namespace User_Management_System.Controllers
             {
                 try
                 {
-                    _context.Update(users);
+                    user.Email = users.Email;
+                    user.FirstName = users.FirstName;
+                    user.LastName = users.LastName;
+                    user.DOB = users.DOB;
+                    user.ProfilePicture = users.ProfilePicture;
+
+                    user.Salt = BCrypt.Net.BCrypt.GenerateSalt();
+                    user.HashPassword = BCrypt.Net.BCrypt.HashPassword(users.Password, user.Salt);
+                    _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -157,7 +164,7 @@ namespace User_Management_System.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(users);
+            return View(user);
         }
 
         // GET: Users/Delete/5
