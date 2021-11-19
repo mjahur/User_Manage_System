@@ -75,14 +75,7 @@ namespace User_Management_System.Controllers
         // GET: Users/Details
         public async Task<IActionResult> Details()
         {
-            int? userID = Int32.Parse(HttpContext.Session.Get("UserSession").GetValue(0).ToString());
-
-            if (userID == null)
-            {
-                return NotFound();
-            }
-
-            Users user = _context.Users.SingleOrDefault(u => u.ID == userID);
+            var user = JsonConvert.DeserializeObject<Users>(HttpContext.Session.GetString("UsersSession"));
 
             if (user == null)
             {
