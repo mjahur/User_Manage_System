@@ -72,22 +72,24 @@ namespace User_Management_System.Controllers
             return View(await _context.Users.ToListAsync());
         }
 
-        // GET: Users/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Users/Details
+        public async Task<IActionResult> Details()
         {
-            if (id == null)
+            int? userID = Int32.Parse(HttpContext.Session.Get("UserSession").GetValue(0).ToString());
+
+            if (userID == null)
             {
                 return NotFound();
             }
 
-            var users = await _context.Users
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (users == null)
+            Users user = _context.Users.SingleOrDefault(u => u.ID == userID);
+
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return View(users);
+            return View(user);
         }
 
         // GET: Users/Create
